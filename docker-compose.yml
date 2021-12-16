@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   postgres:
-    container_name: "Postgres_v12"
-    image: postgres:12
+    container_name: "Postgres_v14.1"
+    image: postgres:14.1
     restart: always
     volumes:
-    - db_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgrespassword
   graphql-engine:
