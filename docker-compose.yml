@@ -1,6 +1,7 @@
-version: '3.6'
+version: '3.8'
 services:
   postgres:
+    container_name: "Postgres_v12"
     image: postgres:12
     restart: always
     volumes:
@@ -8,7 +9,8 @@ services:
     environment:
       POSTGRES_PASSWORD: postgrespassword
   graphql-engine:
-    image: hasura/graphql-engine:v2.0.4
+    container_name: "Hasura_v2.1.0"
+    image: hasura/graphql-engine:v2.1.0
     ports:
     - "8080:8080"
     depends_on:
@@ -25,4 +27,3 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: localhost
 volumes:
   db_data:
-
